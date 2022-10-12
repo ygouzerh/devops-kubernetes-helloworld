@@ -1,0 +1,10 @@
+bases:
+- ../../../hello-nodejs/kustomize_base 
+
+resources:
+- ingress.yaml
+- secret.yaml
+- volume.yaml
+
+patchesStrategicMerge:
+- deployment.yaml

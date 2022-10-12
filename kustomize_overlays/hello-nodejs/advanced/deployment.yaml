@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-deploy
+spec:
+  selector:
+    matchLabels:
+      app: hello
+  template:
+    spec:
+      containers:
+      - name: hello-world
+        env:
+        - name: NAME
+          value: "Yohan"
+        - name: VOLUME_MOUNTED_PATH
+          value: "volume01"
+        - name: HELLO_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: hello-secret
+              key: hello-secret-value
+              optional: false
+        volumeMounts:
+        - mountPath: /usr/src/app/volume01
+          name: hello-volume
+      volumes:
+        - name: hello-volume
+          persistentVolumeClaim:
+            claimName: hello-pvc

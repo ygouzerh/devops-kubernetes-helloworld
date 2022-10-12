@@ -1,0 +1,5 @@
+bases:
+- ../../../hello-nodejs/kustomize_base 
+
+resources:
+- ingress.yaml
