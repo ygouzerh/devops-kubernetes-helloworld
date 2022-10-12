@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello 
+  name: hello-deploy
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: hello-pod
+      app: hello
   template:
     metadata:
       labels:
-        app: hello-pod
+        app: hello
     spec:
       containers:
-      - name: hello-world 
+      - name: hello-world
         image: ygouzerhviseo/hello:1.0
         ports:
         - containerPort: 8080

@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /$2
-  name: hello-ingress
+  name: hello-ing
 spec:
   ingressClassName: nginx
   rules:
@@ -11,8 +11,8 @@ spec:
         paths:
         - backend:
             service:
-              name: hello-service
+              name: hello-svc
               port:
-                number: 8080
-          path: /hello(/|$)(.*)
+                number: 80
+          path: /ygouzerh/hello(/|$)(.*)
           pathType: ImplementationSpecific
