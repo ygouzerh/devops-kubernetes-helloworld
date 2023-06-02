@@ -14,6 +14,6 @@ spec:
               name: hello-svc
               port:
                 number: 80
-          path: /ygouzerh/hello-advanced(/|$)(.*)
+          path: /ygouzerh/hello(/|$)(.*)
           pathType: ImplementationSpecific
 
